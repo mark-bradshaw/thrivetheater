@@ -3,53 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thrive Theater</title>
+    <title>Thrive Theater Group | Decatur Homeschool Community Theater</title>
+    <meta name="description" content="Thrive Theater Group - A theater program for the Decatur homeschool community. Bringing families together through the performing arts.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --teal: #2D936C;
+            --coral: #E8927C;
+            --yellow: #F7CE46;
+            --blue: #5B7DB1;
+            --pink: #E4B4C2;
+            --dark: #2C2C2C;
+            --light: #FAFAFA;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Header / Hero */
+        .hero {
+            min-height: 80vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-        .container {
             text-align: center;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            margin: 1rem;
+            background: linear-gradient(180deg, #fff 0%, var(--light) 100%);
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #764ba2;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #666;
+
+        .logo {
+            max-width: 350px;
+            width: 90%;
             margin-bottom: 1.5rem;
         }
+
         .tagline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            color: var(--teal);
             font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--coral);
+            margin: 0.75rem auto 0;
+        }
+
+        /* About */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Productions */
+        .productions {
+            background: var(--light);
+        }
+
+        .productions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .production-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .production-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .production-year {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .production-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            color: var(--dark);
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--teal);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title::after {
+            background: var(--yellow);
+        }
+
+        .contact-content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
             color: #888;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 70vh;
+            }
+
+            .logo {
+                max-width: 280px;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Thrive Theater</h1>
-        <p>Empowering communities through the performing arts.</p>
-        <p class="tagline">Coming soon...</p>
-    </div>
+    <section class="hero">
+        <img src="logo.png" alt="Thrive Theater Group" class="logo">
+        <p class="tagline">A Theater Program for the Decatur Homeschool Community</p>
+        <p class="hero-subtitle">Bringing families together through the magic of live performance.</p>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <p>Thrive Theater Group is a community theater program based in Decatur, Illinois, created specifically for homeschool families. Each year, we bring together young performers to create a full-scale musical production, fostering creativity, confidence, and lasting friendships along the way.</p>
+        </div>
+    </section>
+
+    <section class="productions" id="productions">
+        <h2 class="section-title">Past Productions</h2>
+        <div class="productions-grid">
+            <div class="production-card">
+                <span class="production-year">2025</span>
+                <h3 class="production-title">Mary Poppins</h3>
+            </div>
+            <div class="production-card">
+                <span class="production-year">2024</span>
+                <h3 class="production-title">Seussical the Musical</h3>
+            </div>
+            <div class="production-card">
+                <span class="production-year">2023</span>
+                <h3 class="production-title">You're a Good Man, Charlie Brown</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <p>Interested in getting involved? Have questions about our program? We'd love to hear from you!</p>
+            <div class="contact-links">
+                <a href="mailto:thrivetheater@gmail.com" class="contact-link">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    thrivetheater@gmail.com
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100093713689162" target="_blank" rel="noopener" class="contact-link">
+                    <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    Follow us on Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Thrive Theater Group | Decatur, IL</p>
+    </footer>
 </body>
 </html>
