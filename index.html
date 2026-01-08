@@ -68,6 +68,14 @@
             max-width: 500px;
         }
 
+        .hero-image {
+            max-width: 600px;
+            width: 90%;
+            margin-top: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
         /* Sections */
         section {
             padding: 4rem 2rem;
@@ -119,7 +127,7 @@
         .production-card {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            overflow: hidden;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -128,6 +136,28 @@
         .production-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .production-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--blue) 100%);
+        }
+
+        .production-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .production-info {
+            padding: 1.5rem;
         }
 
         .production-year {
@@ -241,6 +271,7 @@
         <img src="logo.png" alt="Thrive Theater Group" class="logo">
         <p class="tagline">A Theater Program for the Decatur Homeschool Community</p>
         <p class="hero-subtitle">Bringing families together through the magic of live performance.</p>
+        <img src="hero.jpg" alt="Thriving on Stage - Thrive Theater Group performances" class="hero-image">
     </section>
 
     <section class="about" id="about">
@@ -254,16 +285,25 @@
         <h2 class="section-title">Past Productions</h2>
         <div class="productions-grid">
             <div class="production-card">
-                <span class="production-year">2025</span>
-                <h3 class="production-title">Mary Poppins</h3>
+                <div class="production-image-placeholder">&#127924;</div>
+                <div class="production-info">
+                    <span class="production-year">2025</span>
+                    <h3 class="production-title">Mary Poppins</h3>
+                </div>
             </div>
             <div class="production-card">
-                <span class="production-year">2024</span>
-                <h3 class="production-title">Seussical the Musical</h3>
+                <div class="production-image-placeholder">&#127912;</div>
+                <div class="production-info">
+                    <span class="production-year">2024</span>
+                    <h3 class="production-title">Seussical the Musical</h3>
+                </div>
             </div>
             <div class="production-card">
-                <span class="production-year">2023</span>
-                <h3 class="production-title">You're a Good Man, Charlie Brown</h3>
+                <img src="charlie-brown.jpg" alt="You're a Good Man, Charlie Brown - 2023 Performance" class="production-image">
+                <div class="production-info">
+                    <span class="production-year">2023</span>
+                    <h3 class="production-title">You're a Good Man, Charlie Brown</h3>
+                </div>
             </div>
         </div>
     </section>
